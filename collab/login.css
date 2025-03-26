@@ -1,0 +1,95 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.login-container {
+    background-color: #d3d3d3;
+    border: 2px solid #007bff;
+    padding: 20px;
+    border-radius: 10px;
+    width: 300px;
+    text-align: center;
+}
+
+h1 {
+    color: #000;
+    margin-bottom: 20px;
+}
+
+/* Input Group Styles */
+.input-group {
+    position: relative;
+    margin-bottom: 15px;
+}
+
+.input-group input {
+    width: 50%;
+    padding: 10px;
+    padding-right: 40px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.icon {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+}
+
+.user-icon::before {
+    content: "\1F464"; /* Unicode for user icon */
+}
+
+.eye-icon::before {
+    content: "\1F441"; /* Unicode for eye icon */
+}
+
+/* Links */
+.links {
+    margin-bottom: 20px;
+}
+
+.forgot-password {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.forgot-password:hover {
+    text-decoration: underline;
+}
+
+.sign-up {
+    color: #000;
+    text-decoration: none;
+}
+
+.sign-up span {
+    font-weight: bold;
+}
+
+.sign-up:hover span {
+    text-decoration: underline;
+}
+
+/* Button */
+button {
+    background-color: #000080;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0000cd;
+}
