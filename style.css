@@ -1,0 +1,86 @@
+/* Global Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f8e0;
+    background-image: url('background.png'); /* Path to your image */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh; /* Full viewport height */
+}
+
+/* Header Styles */
+.header {
+    background-color: #ffffff;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.header h1 {
+    font-size: 24px;
+    color: #008000; 
+}
+
+.nav-links a {
+    text-decoration: none;
+    font-size: 16px;
+    color: #008000;
+    margin-left: 20px;
+}
+
+/* Main Content Section - Center and Space Fix */
+.main-content {
+    display: flex;
+    align-items: center; 
+    justify-content: center;
+    height: calc(100vh - 100px); /* Ensure it covers the remaining screen below the header */
+    padding: 0 80px; /* Increased side padding for better spacing */
+}
+
+/* Image Styling */
+.image-container img {
+    width: 400px; /* Adjust for larger screens */
+    height: auto;
+    margin-right: 80px; /* Increase space between image and text */
+}
+
+/* Text Section */
+.text-section {
+    max-width: 600px;
+}
+
+.text-section h2 {
+    font-size: 36px;
+    color: #004d00;
+}
+
+.text-section p {
+    font-size: 18px;
+    color: #006400;
+}
+
+/* Responsive Design - Mobile Fixes */
+@media screen and (max-width: 768px) {
+    .main-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .image-container img {
+        margin: 20px 0; /* Center on smaller screens */
+        width: 300px;
+    }
+
+    .text-section h2 {
+        font-size: 28px;
+    }
+
+    .text-section p {
+        font-size: 16px;
+    }
+}

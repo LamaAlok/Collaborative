@@ -1,0 +1,61 @@
+/* Body and Container */
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    background-color: #e6f7e6; /* Light Green Background */
+}
+
+.signup-container {
+    background-color: #fff;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 128, 0, 0.1); /* Soft Green Shadow */
+    text-align: center;
+    width: 100%;
+    max-width: 400px;
+}
+
+/* Form Elements */
+form input, form select, form button {
+    width: calc(100% - 20px); /* Consistent Width with Padding Considered */
+    padding: 12px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 16px;
+    box-sizing: border-box; /* Ensures Width Includes Padding */
+}
+
+/* Input Focus Effect */
+form input:focus, form select:focus {
+    border-color: #008000; /* Green Border on Focus */
+    outline: none;
+    box-shadow: 0 0 8px rgba(0, 128, 0, 0.2);
+}
+
+/* Button Styles */
+form button {
+    background-color: #008000; /* Eco-Friendly Green */
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+form button:hover {
+    background-color: #006400; /* Darker Green on Hover */
+}
+
+/* Links */
+a {
+    color: #008000;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
