@@ -1,27 +1,34 @@
 <?php
+session_start();
 require 'db.php';
 
-// Check if form data is set
 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['email']) && isset($_POST['password'])) {
-
     $email = $_POST['email'];
     $password = $_POST['password'];
 
-    // Prepare SQL to check the password
-    $sql = "SELECT password FROM users WHERE email = ?";
+    // Fetch user by email
+    $sql = "SELECT id, name, password, user_type FROM users WHERE email = ?";
     $stmt = $conn->prepare($sql);
     $stmt->bind_param("s", $email);
     $stmt->execute();
     $stmt->store_result();
 
     if ($stmt->num_rows === 1) {
-        $stmt->bind_result($hashedPassword);
+        $stmt->bind_result($id, $name, $hashedPassword, $user_type);
         $stmt->fetch();
 
         // Verify password
         if (password_verify($password, $hashedPassword)) {
-            // Redirect to dashboard.html on success
-            header("Location: dashboard.html");
+            $_SESSION['user_id'] = $id;
+            $_SESSION['name'] = $name;
+            $_SESSION['user_type'] = $user_type;
+
+            // Redirect based on user_type
+            if ($user_type === 'admin') {
+                header("Location: admin.html");
+            } else {
+                header("Location: dashboard.html");
+            }
             exit;
         } else {
             echo "Invalid email or password.";
@@ -30,7 +37,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['email']) && isset($_PO
         echo "Invalid email or password.";
     }
 
-    // Close statement and connection
     $stmt->close();
     $conn->close();
 } else {
