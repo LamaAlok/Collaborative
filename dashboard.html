@@ -1,169 +1,114 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>BIN-BUDDY - Waste Management</title>
-    <link
-      href="https://fonts.googleapis.com/css2?family=Hanuman:wght@300;400;700&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="dashboard.css" />
-    <!-- Tabler icons for menu icon -->
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@2.30.0/tabler-icons.min.css"
-    />
-  </head>
-  <body>
-    <div class="top-bar"></div>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BIN-BUDDY</title>
+  <link href="https://fonts.googleapis.com/css2?family=Hanuman:wght@300;400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="dashboard.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@2.30.0/tabler-icons.min.css" />
+</head>
 
-    <main class="container">
-      <header class="main-header">
-        <div class="brand">
-          <img
-            src="https://cdn.builder.io/api/v1/image/assets/TEMP/e15e45fbe9676286bbd308dfb68f57c5d5c32b5f?placeholderIfAbsent=true"
-            alt="BIN-BUDDY Logo"
-            class="logo"
-          />
-          <div class="brand-text">
-            <h1 class="brand-name">BIN-BUDDY</h1>
-            <p class="brand-tagline">Waste Management</p>
-          </div>
+<body>
+  
+  <div class="top-bar"></div>
+
+  <main class="container">
+    <!-- Header with Branding & Navigation -->
+    <header class="main-header">
+      <div class="brand">
+        <img
+          src="https://cdn.builder.io/api/v1/image/assets/TEMP/e15e45fbe9676286bbd308dfb68f57c5d5c32b5f?placeholderIfAbsent=true"
+          alt="BIN-BUDDY Logo"
+          class="logo"
+        />
+        <div class="brand-text">
+          <h1 class="brand-name">BIN-BUDDY</h1>
         </div>
+      </div>
 
-        <nav class="main-nav">
-          <a href="#" class="nav-link">Home</a>
-          <a href="#" class="nav-link">Profile</a>
-          <a href="#" class="nav-link">Service</a>
-          <a href="#" class="nav-link">Contact</a>
-        </nav>
+      <nav class="main-nav">
+        <a href="dashboard.html" class="nav-link">Home</a>
+        <a href="profile.php" class="nav-link">Profile</a>
+        <a href="service.php" class="nav-link">Service</a>
+        <a href="help.html" class="nav-link">Contact</a>
+      </nav>
 
-        <button class="mobile-menu-toggle">
-          <i class="ti ti-menu-2"></i>
-        </button>
-      </header>
+      <button class="mobile-menu-toggle">
+        <i class="ti ti-menu-2"></i>
+      </button>
+    </header>
 
-      <section class="hero-section">
-        <div class="hero-content">
-          <h2 class="hero-title">
-            Efficient Waste Management For a Greener Future
-          </h2>
-          <p class="hero-description">
-            we provide waste collection services to ensure proper disposal and
-            recycling of waste materials. Join us in making a positive impact on
-            the environment.
-          </p>
-          <button class="cta-button">Request Pickup</button>
-        </div>
+    <!-- Hero Section -->
+    <section class="hero-section">
+      <div class="hero-content">
+        <h2 class="hero-title">Efficient Waste Management For a Greener Future</h2>
+        <p class="hero-description">
+          We provide waste collection services to ensure proper disposal and recycling of waste materials. 
+          Join us in making a positive impact on the environment.
+        </p>
+        <a href="request.php" class="btn-request">Request Pickup</a>
 
-        <div class="hero-images">
-          <img
-            src="https://cdn.builder.io/api/v1/image/assets/TEMP/19f84aa42a01c354c0810854537e8264462d872e?placeholderIfAbsent=true"
-            alt="Waste management illustration"
-            class="hero-image-main"
-          />
-          <img
-            src="https://cdn.builder.io/api/v1/image/assets/TEMP/0216d3a25fb78f1cd5e121516e84cd3689b99f70?placeholderIfAbsent=true"
-            alt="Recycling illustration"
-            class="hero-image-secondary"
-          />
-        </div>
-      </section>
+      </div>
 
-      <section class="features-section">
+      <div class="hero-images">
+        <img
+          src="https://cdn.builder.io/api/v1/image/assets/TEMP/19f84aa42a01c354c0810854537e8264462d872e?placeholderIfAbsent=true"
+          alt="Waste management illustration"
+          class="hero-image-main"
+        />
+        <img
+          src="https://cdn.builder.io/api/v1/image/assets/TEMP/0216d3a25fb78f1cd5e121516e84cd3689b99f70?placeholderIfAbsent=true"
+          alt="Recycling illustration"
+          class="hero-image-secondary"
+        />
+      </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features-section">
+      <a href="request.php" style="text-decoration: none; color: inherit;">
         <article class="feature-card">
           <div class="feature-icon">
-            <svg
-              width="103"
-              height="103"
-              viewBox="0 0 103 103"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M68.6667 12.875C69.8049 12.875 70.8965 13.3272 71.7013 14.132C72.5062 14.9368 72.9583 16.0284 72.9583 17.1667V21.4583H81.5417C83.7071 21.4576 85.7928 22.2755 87.3807 23.7479C88.9685 25.2204 89.9411 27.2385 90.1035 29.3979L90.125 30.0417V81.5417C90.1257 83.7071 89.3078 85.7928 87.8354 87.3807C86.363 88.9685 84.3448 89.9411 82.1854 90.1035L81.5417 90.125H21.4583C19.2929 90.1257 17.2072 89.3078 15.6193 87.8354C14.0315 86.363 13.0589 84.3448 12.8965 82.1854L12.875 81.5417V30.0417C12.8743 27.8762 13.6922 25.7905 15.1646 24.2026C16.637 22.6148 18.6552 21.6422 20.8146 21.4798L21.4583 21.4583H30.0417V17.1667C30.0417 16.0284 30.4938 14.9368 31.2987 14.132C32.1035 13.3272 33.1951 12.875 34.3333 12.875C35.4716 12.875 36.5632 13.3272 37.368 14.132C38.1728 14.9368 38.625 16.0284 38.625 17.1667V21.4583H64.375V17.1667C64.375 16.0284 64.8272 14.9368 65.632 14.132C66.4368 13.3272 67.5284 12.875 68.6667 12.875ZM63.6197 40.2515L45.4144 58.4568L39.3417 52.3884C38.5323 51.6066 37.4482 51.174 36.3229 51.1838C35.1977 51.1936 34.1213 51.6449 33.3256 52.4407C32.5299 53.2364 32.0785 54.3128 32.0687 55.438C32.059 56.5633 32.4915 57.6474 33.2733 58.4568L42.3459 67.5337C42.7484 67.9366 43.2264 68.2562 43.7526 68.4743C44.2787 68.6924 44.8427 68.8046 45.4123 68.8046C45.9818 68.8046 46.5458 68.6924 47.0719 68.4743C47.5981 68.2562 48.0761 67.9366 48.4787 67.5337L69.6881 46.32C70.098 45.9241 70.4249 45.4505 70.6498 44.9269C70.8748 44.4033 70.9932 43.8401 70.9981 43.2703C71.0031 42.7005 70.8945 42.1353 70.6787 41.6079C70.4629 41.0805 70.1442 40.6013 69.7413 40.1983C69.3383 39.7954 68.8591 39.4767 68.3317 39.2609C67.8043 39.0451 67.2392 38.9366 66.6693 38.9415C66.0995 38.9465 65.5363 39.0648 65.0127 39.2898C64.4891 39.5147 64.0156 39.8416 63.6197 40.2515Z"
-                fill="#44A355"
-              ></path>
-            </svg>
+            <i class="ti ti-truck"></i>
           </div>
           <h3 class="feature-title">Request Pickup</h3>
         </article>
-
+      </a>
+    
+      <a href="waste_categories.html" style="text-decoration: none; color: inherit;">
         <article class="feature-card">
           <div class="feature-icon">
-            <svg
-              width="112"
-              height="112"
-              viewBox="0 0 112 112"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M101.827 71.96L90.1602 92.1667C87.8736 96.18 83.6269 98.28 79.3336 98H70.0002V107.333L58.3336 86.3334L70.0002 65.3334V74.6667H83.1602L72.8002 56.7L93.0069 45.0334L101.407 59.5934C103.834 63.1867 104.16 67.9934 101.827 71.96ZM42.9802 14.28H66.3136C70.8869 14.28 74.8536 16.94 76.7669 20.7667L81.4336 28.8867L89.5069 24.22L77.1869 44.8L53.1536 45.22L61.2269 40.5534L54.6469 29.12L44.3336 47.0867L24.0802 35.42L32.4802 20.86C34.3936 16.9867 38.3602 14.28 42.9802 14.28ZM23.5669 92.2134L11.9002 72.0067C9.61357 68.04 9.94024 63.28 12.3202 59.6867L16.9869 51.6134L8.91357 46.9467L32.9002 47.32L45.2669 67.9467L37.1936 63.28L30.6136 74.6667H51.3336V98H34.5336C32.3473 98.1583 30.1604 97.6998 28.2217 96.6768C26.283 95.6539 24.6703 94.1074 23.5669 92.2134Z"
-                fill="#44A355"
-              ></path>
-            </svg>
+            <i class="ti ti-trash"></i>
           </div>
           <h3 class="feature-title">Waste Categories</h3>
         </article>
-
+      </a>
+      
+      
+    
+      <a href="payments.html" style="text-decoration: none; color: inherit;">
         <article class="feature-card">
           <div class="feature-icon">
-            <svg
-              width="83"
-              height="83"
-              viewBox="0 0 83 83"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <rect width="83" height="83" fill="#4AB857"></rect>
-              <path
-                d="M6.9165 15.5625H30.2845C31.6474 15.5623 32.997 15.8307 34.2562 16.3523C35.5154 16.8739 36.6594 17.6385 37.623 18.6024L48.4165 29.3958M17.2915 46.6875H6.9165M29.3957 25.9375L36.3123 32.8542C36.7665 33.3083 37.1267 33.8475 37.3725 34.4409C37.6183 35.0342 37.7448 35.6702 37.7448 36.3125C37.7448 36.9548 37.6183 37.5908 37.3725 38.1841C37.1267 38.7775 36.7665 39.3167 36.3123 39.7708C35.8582 40.225 35.319 40.5852 34.7256 40.831C34.1323 41.0768 33.4963 41.2033 32.854 41.2033C32.2117 41.2033 31.5757 41.0768 30.9824 40.831C30.389 40.5852 29.8498 40.225 29.3957 39.7708L24.2082 34.5833C21.234 37.5575 16.5203 37.893 13.1519 35.3684L12.104 34.5833"
-                stroke="black"
-                stroke-width="1.5"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              ></path>
-              <path
-                d="M17.2915 38.0416V53.6041C17.2915 60.1266 17.2915 63.3843 19.3181 65.4109C21.3447 67.4375 24.6024 67.4375 31.1248 67.4375H62.2498C68.7723 67.4375 72.03 67.4375 74.0566 65.4109C76.0832 63.3843 76.0832 60.1266 76.0832 53.6041V43.2291C76.0832 36.7067 76.0832 33.449 74.0566 31.4224C72.03 29.3958 68.7723 29.3958 62.2498 29.3958H32.854"
-                stroke="black"
-                stroke-width="1.5"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              ></path>
-              <path
-                d="M52.7394 48.4166C52.7394 50.0218 52.1018 51.5611 50.9668 52.6961C49.8318 53.8311 48.2924 54.4687 46.6873 54.4687C45.0822 54.4687 43.5429 53.8311 42.4079 52.6961C41.2729 51.5611 40.6353 50.0218 40.6353 48.4166C40.6353 46.8115 41.2729 45.2722 42.4079 44.1372C43.5429 43.0022 45.0822 42.3646 46.6873 42.3646C48.2924 42.3646 49.8318 43.0022 50.9668 44.1372C52.1018 45.2722 52.7394 46.8115 52.7394 48.4166Z"
-                stroke="black"
-                stroke-width="1.5"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              ></path>
-            </svg>
+            <i class="ti ti-credit-card"></i>
           </div>
           <h3 class="feature-title">Payment Method</h3>
         </article>
-
+      </a>
+    
+      <a href="help.html" style="text-decoration: none; color: inherit;">
         <article class="feature-card">
           <div class="feature-icon">
-            <svg
-              width="117"
-              height="117"
-              viewBox="0 0 117 117"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M58.2563 87.75C59.9625 87.75 61.4055 87.1601 62.5853 85.9804C63.765 84.8006 64.3533 83.3593 64.35 81.6563C64.3468 79.9533 63.7585 78.5103 62.5853 77.3273C61.412 76.1443 59.969 75.556 58.2563 75.5625C56.5435 75.569 55.1021 76.1589 53.9321 77.3321C52.7621 78.5054 52.1723 79.9468 52.1625 81.6563C52.1528 83.3658 52.7426 84.8088 53.9321 85.9853C55.1216 87.1618 56.563 87.75 58.2563 87.75ZM53.8688 68.9813H62.8875C62.8875 66.3 63.193 64.1875 63.804 62.6438C64.415 61.1 66.1408 58.9875 68.9813 56.3063C71.0938 54.1938 72.7594 52.182 73.9781 50.271C75.1969 48.36 75.8063 46.0655 75.8063 43.3875C75.8063 38.8375 74.1406 35.3438 70.8094 32.9063C67.4781 30.4688 63.5375 29.25 58.9875 29.25C54.3563 29.25 50.5993 30.4688 47.7165 32.9063C44.8338 35.3438 42.822 38.2688 41.6813 41.6813L49.725 44.85C50.1313 43.3875 51.0461 41.8032 52.4696 40.0969C53.8931 38.3906 56.0658 37.5375 58.9875 37.5375C61.5875 37.5375 63.5375 38.2493 64.8375 39.6728C66.1375 41.0963 66.7875 42.6595 66.7875 44.3625C66.7875 45.9875 66.3 47.5118 65.325 48.9353C64.35 50.3588 63.1313 51.6783 61.6688 52.8938C58.0938 56.0625 55.9 58.4594 55.0875 60.0844C54.275 61.7094 53.8688 64.675 53.8688 68.9813ZM58.5 107.25C51.7563 107.25 45.4188 105.971 39.4875 103.413C33.5563 100.856 28.3969 97.3814 24.0094 92.9906C19.6219 88.5999 16.1493 83.4405 13.5915 77.5125C11.0338 71.5845 9.75326 65.247 9.75001 58.5C9.74676 51.753 11.0273 45.4155 13.5915 39.4875C16.1558 33.5595 19.6284 28.4001 24.0094 24.0094C28.3904 19.6186 33.5498 16.146 39.4875 13.5915C45.4253 11.037 51.7628 9.75652 58.5 9.75002C65.2373 9.74352 71.5748 11.024 77.5125 13.5915C83.4503 16.159 88.6096 19.6316 92.9906 24.0094C97.3716 28.3871 100.846 33.5465 103.413 39.4875C105.981 45.4285 107.26 51.766 107.25 58.5C107.24 65.234 105.96 71.5715 103.409 77.5125C100.857 83.4535 97.3846 88.6129 92.9906 92.9906C88.5966 97.3684 83.4373 100.843 77.5125 103.413C71.5878 105.984 65.2503 107.263 58.5 107.25Z"
-                fill="#44A355"
-              ></path>
-            </svg>
+            <i class="ti ti-help-circle"></i>
           </div>
           <h3 class="feature-title">Guidelines &amp; Help</h3>
         </article>
-      </section>
-    </main>
-
-    <footer class="bottom-bar"></footer>
-  </body>
+      </a>
+    </section>
+    
+      <footer class="bottom-bar">
+      <p class="copyright-text">© BIN-BUDDY. All rights reserved.</p>
+      </footer>
+          
+</body>
 </html>

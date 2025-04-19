@@ -1,0 +1,235 @@
+/* Global Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Hanuman", serif;
+  background-color: #fff;
+}
+
+.dashboard-container {
+  display: flex;
+  height: 100vh;
+  background-color: #fff;
+}
+
+/* Sidebar Styles */
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  width: 280px;
+  background-color: #4a8a54; /* Softer theme green */
+  color: white;
+  padding: 25px 20px;
+}
+
+.sidebar-title {
+  font-size: 30px;
+  font-family: Hanuman;
+  margin-bottom: 20px;
+  font-weight: bold;
+  color: white;
+  line-height: 1.2;
+}
+
+.sidebar-menu {
+  list-style-type: none;
+  padding-top: 10px;
+  border-top: 2px solid rgba(255, 255, 255, 0.4); /* Divider line */
+}
+
+.menu-item {
+  font-size: 20px;
+  font-family: Hanuman;
+  margin-bottom: 14px;
+  cursor: pointer;
+  padding: 10px 16px;
+  border-radius: 6px;
+  transition: background 0.2s ease;
+  color: white;
+}
+
+.menu-item:hover,
+.menu-item.selected {
+  background-color: rgba(255, 255, 255, 0.15);
+}
+
+.menu-item.active {
+  font-weight: 700;
+}
+
+/* Main Content Styles */
+.main-content {
+  flex: 1;
+  padding: 30px 40px;
+  overflow-x: auto;
+}
+
+/* Search Bar Styles */
+.search-container {
+  display: flex;
+  align-items: center;
+  border: 2px solid #4ab857;
+  background-color: rgba(217, 217, 217, 0.2);
+  border-radius: 8px;
+  padding: 12px 16px;
+  margin-bottom: 40px;
+}
+
+.search-icon {
+  margin-right: 10px;
+}
+
+.search-input {
+  background-color: transparent;
+  font-size: 20px;
+  font-family: Hanuman;
+  color: rgba(0, 0, 0, 0.6);
+  flex: 1;
+  border: none;
+  outline: none;
+}
+
+/* Table Styles */
+.pickups-table-container {
+  width: 100%;
+  background-color: rgba(217, 217, 217, 0.2);
+  border-radius: 20px;
+  padding: 20px;
+}
+
+.table-header {
+  background-color: #d9d9d9;
+  border-radius: 20px;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.header-row,
+.table-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+}
+
+.header-cell,
+.table-cell {
+  font-size: 20px;
+  font-family: Hanuman;
+  font-weight: 700;
+  flex: 1;
+  text-align: center;
+}
+
+.table-row {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  padding: 18px 0;
+}
+
+/* Status Styles */
+.status {
+  border-radius: 4px;
+  padding: 8px 24px;
+  font-size: 18px;
+  font-family: Hanuman;
+  font-weight: 700;
+  text-align: center;
+  display: inline-block;
+}
+
+.status.pending {
+  background-color: rgba(248, 227, 163, 0.75);
+}
+
+.status.approved {
+  background-color: #d4e9d4;
+  color: green;
+}
+
+/* Action Button Styles */
+.actions {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+}
+
+.approve-btn {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border: 2px solid #44a355;
+  border-radius: 4px;
+  background-color: #fff;
+  padding: 8px 16px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.approve-btn:hover {
+  background-color: #e6f7eb;
+}
+
+.approve-btn span {
+  color: #4ab857;
+  font-size: 18px;
+  font-family: Hanuman;
+  font-weight: 700;
+}
+
+.reject-btn {
+  border: 2px solid #c95353;
+  border-radius: 4px;
+  background-color: #f5f5f5;
+  padding: 8px 16px;
+  color: #e56666;
+  font-size: 18px;
+  font-family: Hanuman;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.reject-btn:hover {
+  background-color: #ffeaea;
+}
+
+/* Responsive Styles */
+@media (max-width: 640px) {
+  .sidebar {
+    display: none;
+  }
+
+  .main-content {
+    padding: 20px;
+  }
+
+  .header-cell,
+  .table-cell {
+    font-size: 16px;
+  }
+
+  .search-input {
+    font-size: 16px;
+  }
+}
+.status.approved {
+  background-color: #d4f4d7;
+  color: green;
+  font-weight: bold;
+}
+
+.status.rejected {
+  background-color: #fddede;
+  color: red;
+  font-weight: bold;
+}
+
+.status.pending {
+  background-color: #fff5c4;
+  color: #d19600;
+  font-weight: bold;
+}

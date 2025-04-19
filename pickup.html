@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Pickup Management Dashboard</title>
+  <link rel="stylesheet" href="pickup.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Hanuman:wght@400;700&display=swap" rel="stylesheet"/>
+</head>
+<body>
+  <div class="dashboard-container">
+    <nav class="sidebar">
+      <h1 class="sidebar-title">Manage Pickups</h1>
+      <ul class="sidebar-menu">
+        <li class="menu-item active">Dashboard</li>
+        <li class="menu-item selected">Manage Pickups</li>
+        <li class="menu-item">Manage User</li>
+        <li class="menu-item">Analytics & Report</li>
+        <li class="menu-item">Settings</li>
+      </ul>
+    </nav>
+
+    <main class="main-content">
+      <div class="search-container">
+        <div class="search-icon">
+          <svg width="34" height="34" viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M29.75 29.75L23.5975 23.5975M23.5975 23.5975C24.6499 22.545 25.4847 21.2956 26.0543 19.9206C26.6239 18.5455 26.917 17.0717 26.917 15.5834C26.917 14.095 26.6239 12.6212 26.0543 11.2462C25.4847 9.87113 24.6499 8.62172 23.5975 7.5693C22.545 6.51687 21.2956 5.68204 19.9206 5.11248C18.5455 4.54291 17.0717 4.24976 15.5834 4.24976C14.095 4.24976 12.6212 4.54291 11.2462 5.11248C9.87113 5.68204 8.62172 6.51687 7.5693 7.5693C5.44383 9.69476 4.24976 12.5775 4.24976 15.5834C4.24976 18.5892 5.44383 21.472 7.5693 23.5975C9.69476 25.7229 12.5775 26.917 15.5834 26.917C18.5892 26.917 21.472 25.7229 23.5975 23.5975Z" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <input type="text" placeholder="Search......." class="search-input"/>
+      </div>
+
+      <section class="pickups-table-container">
+        <header class="table-header">
+          <div class="header-row">
+            <h3 class="header-cell">Pickup ID</h3>
+            <h3 class="header-cell">Location</h3>
+            <h3 class="header-cell">Status</h3>
+            <h3 class="header-cell">Actions</h3>
+          </div>
+        </header>
+
+        <div class="table-body">
+          <!-- Sample rows -->
+          <div class="table-row">
+            <div class="table-cell pickup-id">PICKUP-001</div>
+            <div class="table-cell location">Maitidevi</div>
+            <div class="table-cell status pending">Pending</div>
+            <div class="table-cell actions">
+              <button class="approve-btn">Approve</button>
+              <button class="reject-btn">Reject</button>
+            </div>
+          </div>
+
+          <div class="table-row">
+            <div class="table-cell pickup-id">PICKUP-002</div>
+            <div class="table-cell location">Baneshwor</div>
+            <div class="table-cell status pending">Pending</div>
+            <div class="table-cell actions">
+              <button class="approve-btn">Approve</button>
+              <button class="reject-btn">Reject</button>
+            </div>
+          </div>
+
+          <div class="table-row">
+            <div class="table-cell pickup-id">PICKUP-003</div>
+            <div class="table-cell location">Anamnagar</div>
+            <div class="table-cell status pending">Pending</div>
+            <div class="table-cell actions">
+              <button class="approve-btn">Approve</button>
+              <button class="reject-btn">Reject</button>
+            </div>
+          </div>
+
+          <div class="table-row">
+            <div class="table-cell pickup-id">PICKUP-004</div>
+            <div class="table-cell location">Jhamsikhel</div>
+            <div class="table-cell status approved">Pending</div>
+            <div class="table-cell actions">
+              <button class="approve-btn">Approve</button>
+              <button class="reject-btn">Reject</button>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script>
+  document.querySelector('.table-body').addEventListener('click', function (e) {
+  if (e.target.classList.contains('approve-btn')) {
+    const row = e.target.closest('.table-row');
+    const id = row.querySelector('.pickup-id').innerText;
+    updateStatus(id, 'Pending', row);
+  }
+
+  if (e.target.classList.contains('reject-btn')) {
+    const row = e.target.closest('.table-row');
+    const id = row.querySelector('.pickup-id').innerText;
+    updateStatus(id, 'Pending', row);
+  }
+});
+
+
+    function updateStatus(pickupId, status, row) {
+      fetch('pickup-action.php', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/x-www-form-urlencoded'
+        },
+        body: `pickup_id=${encodeURIComponent(pickupId)}&status=${encodeURIComponent(status)}`
+      })
+      .then(response => response.text())
+      .then(data => {
+        console.log(data);
+        alert(data);
+        const statusCell = row.querySelector('.status');
+        statusCell.textContent = status;
+        statusCell.classList.remove('pending', 'approved', 'rejected');
+        statusCell.classList.add(status.toLowerCase());
+      })
+      .catch(error => {
+        alert("Failed to update: " + error);
+      });
+    }
+  </script>

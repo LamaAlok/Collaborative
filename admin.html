@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -13,136 +13,65 @@
   <body>
     <div class="dashboard">
       <header class="header">
-        <img
-          src="https://cdn.builder.io/api/v1/image/assets/TEMP/2a3e6344323cfc3254a3e0afd12c3fe2402a8aa9"
-          alt="Dashboard Logo"
-          class="header-logo"
-        />
+        <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/2a3e6344323cfc3254a3e0afd12c3fe2402a8aa9" alt="Admin" class="header-logo" />
         <h1 class="header-title">Admin Dashboard</h1>
       </header>
 
       <div class="dashboard-content">
-        <nav class="sidebar">
-          <h2 class="sidebar-title">Dashboard</h2>
+        <aside class="sidebar">
           <ul class="sidebar-menu">
-            <li class="sidebar-menu-item">Manage Pickups</li>
-            <li class="sidebar-menu-item">Manage User</li>
-            <li class="sidebar-menu-item">Analytics &amp; Report</li>
-            <li class="sidebar-menu-item">Settings</li>
+            <li class="active">Dashboard</li>
+            <li>Manage Pickups</li>
+            <li>Manage User</li>
+            <li>Analytics & Report</li>
+            <li>Settings</li>
           </ul>
-        </nav>
+        </aside>
 
         <main class="main-content">
-          <h2 class="section-title">Overview</h2>
-
-          <section class="stats-grid">
-            <article class="stat-card">
-              <div class="stat-icon">
-                <svg
-                  width="36"
-                  height="36"
-                  viewBox="0 0 36 36"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                  class="users-icon"
-                >
-                  <path
-                    d="M18 22.5C28.656 22.5 34.2 28.8 34.2 32.4V34.2H1.79995V32.4C1.79995 28.8 7.34395 22.5 18 22.5Z"
-                    fill="black"
-                  ></path>
-                  <path
-                    d="M18 19.8C13.0294 19.8 9 15.7706 9 10.8C9 5.82949 13.0294 1.80005 18 1.80005C22.9706 1.80005 27 5.82949 27 10.8C27 15.7706 22.9706 19.8 18 19.8Z"
-                    fill="black"
-                  ></path>
-                </svg>
+          <section class="overview">
+            <h2 class="section-title">Overview</h2>
+            <div class="card-grid">
+              <div class="card">
+                <span class="icon">👤</span>
+                <p class="card-title">Active Users</p>
+                <h3 class="card-number">122,345</h3>
               </div>
-              <h3 class="stat-title">Active Users</h3>
-              <p class="stat-value">-122345</p>
-            </article>
-
-            <article class="stat-card">
-              <div class="stat-icon">
-                <svg
-                  width="48"
-                  height="48"
-                  viewBox="0 0 48 48"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                  class="pickup-icon"
-                >
-                  <path
-                    d="M13.0001 11.6159C12.0801 11.6159 11.2861 11.2819 10.6181 10.6139C9.95005 9.94595 9.61605 9.15128 9.61605 8.22995C9.61605 7.30861 9.94939 6.51461 10.6161 5.84795C11.2854 5.17995 12.0801 4.84595 13.0001 4.84595C13.9201 4.84595 14.7141 5.17995 15.3821 5.84795C16.0501 6.51595 16.3841 7.31061 16.3841 8.23195C16.3841 9.15328 16.0507 9.94661 15.3841 10.6119C14.7147 11.2813 13.9201 11.6159 13.0001 11.6159ZM9.69205 42.9999V29.8459H6.15405V14.8459H19.8461V23.1319C18.1821 24.2026 16.7921 25.7026 15.6761 27.6319C14.5587 29.5599 14.0001 31.6826 14.0001 33.9999C14.0001 35.5413 14.2414 36.9806 14.7241 38.3179C15.2054 39.6553 15.8101 40.7646 16.5381 41.6459V42.9999H9.69205ZM27.0761 43.0779C24.5921 43.0779 22.4587 42.1859 20.6761 40.4019C18.8934 38.6179 18.0014 36.4839 18.0001 33.9999C18.0001 32.2279 18.4854 30.5926 19.4561 29.0939C20.4267 27.5953 21.7621 26.4739 23.4621 25.7299V27.9279C22.3821 28.6146 21.5354 29.4786 20.9221 30.5199C20.3074 31.5599 20.0001 32.7199 20.0001 33.9999C20.0001 35.9999 20.6801 37.6799 22.0401 39.0399C23.4001 40.3999 25.0794 41.0793 27.0781 41.0779C28.8461 41.0779 30.4227 40.4746 31.8081 39.2679C33.1921 38.0639 33.9614 36.4999 34.1161 34.5759H36.1161C35.9107 37.0613 34.9547 39.0993 33.2481 40.6899C31.5414 42.2806 29.4827 43.0766 27.0761 43.0779ZM42.1181 38.0159L37.4401 30.9999H27.0001V16.9999H29.0001V28.9999H38.5601L43.8161 36.9319L42.1181 38.0159Z"
-                    fill="black"
-                  ></path>
-                </svg>
+              <div class="card">
+                <span class="icon">♿</span>
+                <p class="card-title">Pickup Approved</p>
+                <h3 class="card-number">123</h3>
               </div>
-              <h3 class="stat-title">Pickup Approved</h3>
-              <p class="stat-value">- 123</p>
-            </article>
-
-            <article class="stat-card">
-              <div class="stat-icon">
-                <svg
-                  width="40"
-                  height="40"
-                  viewBox="0 0 40 40"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                  class="receipt-icon"
-                >
-                  <path
-                    d="M25 27.8166V21.6666H27.5V26.3666L31.5667 28.7166L30.3167 30.8833L25 27.8166ZM32.5 5.83325L30 3.33325L27.5 5.83325L25 3.33325L22.5 5.83325L20 3.33325L17.5 5.83325L15 3.33325L12.5 5.83325L10 3.33325L7.5 5.83325L5 3.33325V36.6666L7.5 34.1666L10 36.6666L12.5 34.1666L15 36.6666L17.6333 34.0333C17.8667 34.3499 18.1333 34.6333 18.4167 34.9166C20.6032 37.0705 23.5503 38.2761 26.6195 38.2723C29.6888 38.2685 32.6329 37.0556 34.8141 34.8963C36.9953 32.737 38.2379 29.8053 38.2727 26.7363C38.3075 23.6672 37.1317 20.7081 35 18.4999V3.33325L32.5 5.83325ZM18.5 18.3333C17.5 19.2833 16.7167 20.4166 16.1167 21.6666H10V18.3333H18.5ZM15.1167 24.9999C15 25.5499 15 26.0999 15 26.6666C15 27.2333 15 27.7833 15.1167 28.3333H10V24.9999H15.1167ZM30 14.9999H10V11.6666H30V14.9999ZM34.75 26.6666C34.75 27.7333 34.55 28.7833 34.1667 29.7666C33.7333 30.7333 33.1333 31.6666 32.3833 32.3833C31.6667 33.1333 30.7333 33.7333 29.7667 34.1666C28.7833 34.5499 27.7333 34.7499 26.6667 34.7499C22.2 34.7499 18.5833 31.1333 18.5833 26.6666C18.5833 24.5166 19.4333 22.4999 20.95 20.9499C22.5 19.4333 24.5167 18.5833 26.6667 18.5833C31.1167 18.5833 34.75 22.1999 34.75 26.6666Z"
-                    fill="black"
-                  ></path>
-                </svg>
+              <div class="card">
+                <span class="icon">🧾</span>
+                <p class="card-title">Total pending Pickups</p>
+                <h3 class="card-number">50</h3>
               </div>
-              <h3 class="stat-title">Total pending Pickups</h3>
-              <p class="stat-value">- 50</p>
-            </article>
+            </div>
           </section>
 
-          <h2 class="section-title">Total waste Collected</h2>
-
-          <section class="waste-grid">
-            <article class="waste-card">
-              <img
-                src="https://cdn.builder.io/api/v1/image/assets/TEMP/faed4867793e776ffa7c83bfc5f8841c784135dc"
-                alt="Biodegradable waste"
-                class="waste-image"
-              />
-              <h3 class="waste-title">Biodegradable</h3>
-              <p class="waste-value">-1234 kg</p>
-            </article>
-
-            <article class="waste-card">
-              <img
-                src="https://cdn.builder.io/api/v1/image/assets/TEMP/211f3bcec3e008b4f80ef556a4a3bfa218037213"
-                alt="Non-Biodegradable waste"
-                class="waste-image non-bio-image"
-              />
-              <h3 class="waste-title">Non-Biodegradable</h3>
-              <p class="waste-value">-5678 kg</p>
-            </article>
-
-            <article class="waste-card">
-              <div class="waste-icon">
-                <svg
-                  width="112"
-                  height="112"
-                  viewBox="0 0 112 112"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                  class="recycle-icon"
-                >
-                  <path
-                    d="M101.827 71.96L90.16 92.1667C87.8733 96.18 83.6267 98.28 79.3333 98H70V107.333L58.3333 86.3334L70 65.3334V74.6667H83.16L72.8 56.7L93.0067 45.0334L101.407 59.5934C103.833 63.1867 104.16 67.9934 101.827 71.96ZM42.98 14.28H66.3133C70.8867 14.28 74.8533 16.94 76.7667 20.7667L81.4333 28.8867L89.5067 24.22L77.1867 44.8L53.1533 45.22L61.2267 40.5534L54.6467 29.12L44.3333 47.0867L24.08 35.42L32.48 20.86C34.3933 16.9867 38.36 14.28 42.98 14.28ZM23.5667 92.2134L11.9 72.0067C9.61333 68.04 9.94 63.28 12.32 59.6867L16.9867 51.6134L8.91333 46.9467L32.9 47.32L45.2667 67.9467L37.1933 63.28L30.6133 74.6667H51.3333V98H34.5333C32.347 98.1583 30.1602 97.6998 28.2215 96.6768C26.2828 95.6539 24.6701 94.1074 23.5667 92.2134Z"
-                    fill="#44A355"
-                  ></path>
-                </svg>
+          <section class="waste-section">
+            <h2 class="section-title">Total Waste Collected</h2>
+            <div class="card-grid waste">
+              <div class="waste-card">
+                <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/faed4867793e776ffa7c83bfc5f8841c784135dc" alt="Biodegradable" />
+                <p class="waste-type">Biodegradable</p>
+                <h3 class="waste-amount">1234 kg</h3>
               </div>
-              <h3 class="waste-title">Recyclable</h3>
-              <p class="waste-value">-678kg</p>
-            </article>
+              <div class="waste-card">
+                <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/211f3bcec3e008b4f80ef556a4a3bfa218037213" alt="Non-Biodegradable" />
+                <p class="waste-type">Non-Biodegradable</p>
+                <h3 class="waste-amount">5678 kg</h3>
+              </div>
+              <div class="waste-card">
+                <svg width="60" height="60" fill="#44A355" viewBox="0 0 24 24">
+                  <path d="M21.561 6.685l-1.584-2.774a1 1 0 0 0-1.731 1l1.584 2.774a1 1 0 0 0 1.731-1zM3.439 6.685a1 1 0 0 0 1.731 1l1.584-2.774a1 1 0 1 0-1.731-1L3.439 6.685z"/>
+                  <path d="M12 2a10 10 0 1 0 10 10A10.011 10.011 0 0 0 12 2zm1 14.93a7.984 7.984 0 0 1-2-.262V20h2z"/>
+                </svg>
+                <p class="waste-type">Recyclable</p>
+                <h3 class="waste-amount">678 kg</h3>
+              </div>
+            </div>
           </section>
         </main>
       </div>

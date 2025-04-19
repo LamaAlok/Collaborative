@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>BIN-BUDDY - Services</title>
+  <link rel="stylesheet" href="service.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Hanuman&display=swap" rel="stylesheet"/>
+</head>
+<body>
+  <main class="container">
+    <header class="main-header">
+      <div class="header-left">
+        <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/e15e45fbe9676286bbd308dfb68f57c5d5c32b5f" alt="Bin Buddy Logo" class="logo" />
+        <div class="brand-info">
+          <h1 class="brand-name">BIN-BUDDY</h1>
+          <p class="brand-tagline">Waste Management</p>
+        </div>
+      </div>
+      <nav class="main-nav">
+        <ul class="nav-list">
+          <li><a href="dashboard.html">Home</a></li>
+          <li><a href="profile.php">Profile</a></li>
+          <li><a href="service.php">Service</a></li>
+          <li><a href="contact.php">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <section class="services-grid">
+    <a href="request.php" style="text-decoration: none; color: inherit;">
+  <article class="service-card">
+    <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/d934aced36764601155881e254373d6d0b73ea78" alt="Request pickup icon" class="service-icon" />
+    <h2 class="service-title">Request Pickup</h2>
+    <p class="service-description">
+      Schedule a waste pickup at your location, and our team will collect your waste for proper disposal.
+    </p>
+  </article>
+</a>
+
+      <article class="service-card">
+        <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/652303eba63882baa2cc6e49184d88494da59a0d" alt="Waste collection truck" class="service-icon" />
+        <h2 class="service-title">Waste Collection</h2>
+        <p class="service-description">
+          We provide regular waste collection services to keep your property clean and waste-free.
+        </p>
+      </article>
+
+      <article class="service-card">
+        <svg width="155" height="155" viewBox="0 0 155 155" fill="none" xmlns="http://www.w3.org/2000/svg" class="service-icon recycle-icon">
+          <path d="M140.92 99.5875L124.775 127.552C121.61 133.106 115.733 136.013 109.791 135.625H96.8745V148.542L80.7287 119.479L96.8745 90.4167V103.333H115.087L100.75 78.4688L128.714 62.3229L140.339 82.4729C143.697 87.4459 144.15 94.0979 140.92 99.5875ZM59.4808 19.7625H91.7725C98.1016 19.7625 103.591 23.4438 106.239 28.7396L112.697 39.9771L123.87 33.5188L106.82 62L73.56 62.5813L84.7329 56.1229L75.6266 40.3L61.3537 65.1646L33.3245 49.0188L44.9495 28.8688C47.5975 23.5083 53.087 19.7625 59.4808 19.7625ZM32.6141 127.617L16.4683 99.6521C13.3037 94.1625 13.7558 87.575 17.0495 82.6021L23.5079 71.4292L12.335 64.9708L45.5308 65.4875L62.6454 94.0333L51.4725 87.575L42.3662 103.333H71.0412V135.625H47.7912C44.7655 135.844 41.7391 135.21 39.0561 133.794C36.3731 132.378 34.1412 130.238 32.6141 127.617Z" fill="#44A355"/>
+        </svg>
+        <h2 class="service-title">Recycling Services</h2>
+        <p class="service-description">
+          Our recycling programs help divert materials from landfills by processing recyclables into new products.
+        </p>
+      </article>
+
+      <article class="service-card">
+        <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/f356539fc660feb77fd43ed865b0c8f7e766e962" alt="Waste disposal bin" class="service-icon" />
+        <h2 class="service-title">Waste Disposal</h2>
+        <p class="service-description">
+          We follow all local regulations and environmental guidelines to ensure safe waste disposal.
+        </p>
+      </article>
+    </section>
+  </main>
+</body>
+</html>

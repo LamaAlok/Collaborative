@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Payment Details - The Bin-Buddy</title>
+  <link rel="stylesheet" href="payments.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Hanuman&family=Instrument+Sans:wght@400;700&display=swap" rel="stylesheet" />
+  <style>
+    .form-section, .card-details-section {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header class="site-header">
+      <div class="logo-area">
+        <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/3e9ec7cb8432d8503811ff9c4127e3aa92fb488e?placeholderIfAbsent=true" class="logo" />
+        <div>
+          <h1 class="brand-name">THE BIN-BUDDY</h1>
+          <p class="brand-tagline">Waste Management</p>
+        </div>
+      </div>
+      <nav class="main-nav">
+        <a href="dashboard.html" class="nav-link">Home</a>
+        <a href="profile.html" class="nav-link">Profile</a>
+        <a href="service.php" class="nav-link">Service</a>
+        <a href="help.html" class="nav-link">Contact</a>
+      </nav>
+    </header>
+
+    <main class="payment-section">
+      <section class="card payment-card">
+        <h2 class="section-title">Payment Details</h2>
+        <ul class="details-list">
+          <li><span class="label">Service:</span> Waste Pickup</li>
+          <li><span class="label">Date:</span> <span id="payment-date"></span></li>
+          <li><span class="label">Pickup Type:</span> Regular</li>
+          <li><span class="label">Amount:</span> Rs 555</li>
+        </ul>
+      </section>
+    </main>
+
+    <!-- ✅ Entire Form -->
+    <form action="payments.php" method="POST" id="paymentForm">
+      <!-- Payment Method Selection (inside form) -->
+      <section class="card payment-card">
+        <h2 class="section-title">Select Payment Method</h2>
+        <label><input type="radio" name="method" value="Credit/Debit" required /> Credit/Debit</label><br />
+        <label><input type="radio" name="method" value="Khalti" /> Khalti</label><br />
+        <label><input type="radio" name="method" value="Cash on Pickup" /> Cash on Pickup</label>
+      </section>
+
+      <!-- Billing Info -->
+      <section class="form-section common-form">
+        <h2 class="section-title">Billing Information</h2>
+        <input type="text" name="full_name" placeholder="Full Name" class="form-input" required />
+        <input type="text" name="phone" placeholder="Phone Number" class="form-input" required />
+      </section>
+
+      <!-- Card Details -->
+      <section class="card-details-section" id="card-details">
+        <h2 class="section-title">Card Details</h2>
+        <input type="text" name="card_name" placeholder="Card Holder Name" class="form-input" />
+        <input type="text" name="card_number" placeholder="Card Number" class="form-input" />
+      </section>
+
+      <!-- Wallet Section -->
+      <section class="card-details-section" id="wallet-details">
+        <h2 class="section-title">Wallet Details</h2>
+        <input type="text" name="wallet_number" placeholder="eSewa/Khalti Mobile Number" class="form-input" />
+      </section>
+
+      <div class="button-wrapper">
+        <button type="submit" class="confirm-button">Confirm Payment</button>
+      </div>
+    </form>
+  </div>
+
+  <script>
+    // Set today's date
+    document.getElementById("payment-date").textContent = new Date().toLocaleDateString("en-US", {
+      year: 'numeric',
+      month: 'long',
+      day: 'numeric'
+    });
+
+    // Toggle input sections based on payment method
+    const radios = document.querySelectorAll('input[name="method"]');
+    const card = document.getElementById('card-details');
+    const wallet = document.getElementById('wallet-details');
+    const common = document.querySelector('.common-form');
+
+    radios.forEach(radio => {
+      radio.addEventListener('change', () => {
+        card.style.display = 'none';
+        wallet.style.display = 'none';
+        common.style.display = 'block';
+
+        if (radio.value === 'Credit/Debit') {
+          card.style.display = 'block';
+        } else if (radio.value === 'eSewa' || radio.value === 'Khalti') {
+          wallet.style.display = 'block';
+        }
+      });
+    });
+  </script>
+</body>
+</html>

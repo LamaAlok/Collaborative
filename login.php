@@ -6,30 +6,31 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['email']) && isset($_PO
     $email = $_POST['email'];
     $password = $_POST['password'];
 
-    // Fetch user by email
-    $sql = "SELECT id, name, password, user_type FROM users WHERE email = ?";
+    $sql = "SELECT id, password, user_type FROM users WHERE email = ?";
     $stmt = $conn->prepare($sql);
     $stmt->bind_param("s", $email);
     $stmt->execute();
     $stmt->store_result();
 
     if ($stmt->num_rows === 1) {
-        $stmt->bind_result($id, $name, $hashedPassword, $user_type);
+        $stmt->bind_result($user_id, $hashedPassword, $user_type);
         $stmt->fetch();
 
-        // Verify password
         if (password_verify($password, $hashedPassword)) {
-            $_SESSION['user_id'] = $id;
-            $_SESSION['name'] = $name;
+            $_SESSION['user_id'] = $user_id;
             $_SESSION['user_type'] = $user_type;
 
-            // Redirect based on user_type
+            // Redirect based on role
             if ($user_type === 'admin') {
                 header("Location: admin.html");
+                exit;
+            } elseif ($user_type === 'collector') {
+                header("Location: pickup-action.php");  // Your collector dashboard
+                exit;
             } else {
-                header("Location: dashboard.html");
+                header("Location: dashboard.html"); // For general users
+                exit;
             }
-            exit;
         } else {
             echo "Invalid email or password.";
         }
