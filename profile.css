@@ -1,0 +1,669 @@
+.profile {
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+  }
+  
+  .profile .div {
+    background-color: #ffffff;
+    width: 1440px;
+    height: 1024px;
+    position: relative;
+  }
+  
+  .profile .line {
+    width: 1440px;
+    height: 1px;
+    top: 96px;
+    position: absolute;
+    left: 0;
+    object-fit: cover;
+  }
+  
+  .profile .overlap {
+    position: absolute;
+    width: 749px;
+    height: 927px;
+    top: 97px;
+    left: 284px;
+  }
+  
+  .profile .overlap-group {
+    position: absolute;
+    width: 699px;
+    height: 927px;
+    top: 0;
+    left: 0;
+  }
+  
+  .profile .img {
+    width: 1px;
+    height: 927px;
+    top: 0;
+    position: absolute;
+    left: 0;
+    object-fit: cover;
+  }
+  
+  .profile .line-2 {
+    width: 1px;
+    height: 182px;
+    top: 391px;
+    position: absolute;
+    left: 0;
+    object-fit: cover;
+  }
+  
+  .profile .line-3 {
+    width: 156px;
+    height: 1px;
+    top: 422px;
+    position: absolute;
+    left: 0;
+    object-fit: cover;
+  }
+  
+  .profile .frame {
+    display: flex;
+    flex-direction: column;
+    width: 636px;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 10px;
+    position: absolute;
+    top: 313px;
+    left: 63px;
+  }
+  
+  .profile .frame-2 {
+    display: flex;
+    align-items: center;
+    position: relative;
+    align-self: stretch;
+    width: 100%;
+    flex: 0 0 auto;
+  }
+  
+  .profile .image {
+    position: relative;
+    width: 169.07px;
+    height: 168px;
+    object-fit: cover;
+  }
+  
+  .profile .frame-3 {
+    display: flex;
+    flex-direction: column;
+    width: 429px;
+    align-items: flex-start;
+    position: relative;
+  }
+  
+  .profile .text-wrapper {
+    position: relative;
+    align-self: stretch;
+    margin-top: -1.00px;
+    font-family: "Hanuman-Regular", Helvetica;
+    font-weight: 400;
+    color: #000000;
+    font-size: 36px;
+    letter-spacing: 0.36px;
+    line-height: normal;
+  }
+  
+  .profile .p {
+    align-self: stretch;
+    font-family: "Hanuman-Regular", Helvetica;
+    font-weight: 400;
+    color: #00000080;
+    font-size: 20px;
+    letter-spacing: 0.20px;
+    position: relative;
+    line-height: normal;
+  }
+  
+  .profile .div-wrapper {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 10px;
+    position: absolute;
+    top: 42px;
+    left: 22px;
+  }
+  
+  .profile .text-wrapper-2 {
+    position: relative;
+    width: fit-content;
+    margin-top: -1.00px;
+    font-family: "Hanuman-Regular", Helvetica;
+    font-weight: 400;
+    color: #000000;
+    font-size: 48px;
+    letter-spacing: 0.48px;
+    line-height: normal;
+  }
+  
+  .profile .frame-4 {
+    display: inline-flex;
+    align-items: center;
+    gap: 55px;
+    position: absolute;
+    top: 167px;
+    left: 85px;
+  }
+  
+  .profile .mdi-recycle {
+    position: relative;
+    width: 112px;
+    height: 112px;
+  }
+  
+  .profile .frame-5 {
+    display: flex;
+    flex-direction: column;
+    width: 355px;
+    align-items: flex-start;
+    position: relative;
+  }
+  
+  .profile .frame-6 {
+    display: flex;
+    width: 655px;
+    align-items: center;
+    gap: 33px;
+    position: absolute;
+    top: 555px;
+    left: 94px;
+  }
+  
+  .profile .rectangle-wrapper {
+    position: relative;
+    width: 135px;
+    height: 135px;
+  }
+  
+  .profile .rectangle {
+    position: absolute;
+    width: 115px;
+    height: 115px;
+    top: 10px;
+    left: 10px;
+    object-fit: cover;
+  }
+  
+  .profile .frame-7 {
+    display: flex;
+    flex-direction: column;
+    width: 515px;
+    align-items: flex-start;
+    position: relative;
+    margin-right: -28.00px;
+  }
+  
+  .profile .overlap-2 {
+    position: absolute;
+    width: 217px;
+    height: 22px;
+    top: 349px;
+    left: 28px;
+  }
+  
+  .profile .gg-phone {
+    position: absolute;
+    width: 22px;
+    height: 22px;
+    top: 0;
+    left: 0;
+  }
+  
+  .profile .group {
+    position: absolute;
+    width: 18px;
+    height: 18px;
+    top: 2px;
+    left: 2px;
+  }
+  
+  .profile .text-wrapper-3 {
+    position: absolute;
+    width: 217px;
+    top: 5px;
+    left: 0;
+    font-family: "Hanuman-Regular", Helvetica;
+    font-weight: 400;
+    color: #000000;
+    font-size: 16px;
+    text-align: center;
+    letter-spacing: 0.16px;
+    line-height: normal;
+    white-space: nowrap;
+  }
+  
+  .profile .overlap-3 {
+    position: absolute;
+    width: 221px;
+    height: 37px;
+    top: 384px;
+    left: 24px;
+  }
+  
+  .profile .mdi-address-marker {
+    position: absolute;
+    width: 37px;
+    height: 37px;
+    top: 0;
+    left: 0;
+  }
+  
+  .profile .text-wrapper-4 {
+    position: absolute;
+    width: 217px;
+    top: 2px;
+    left: 4px;
+    font-family: "Hanuman-Regular", Helvetica;
+    font-weight: 400;
+    color: #000000;
+    font-size: 16px;
+    text-align: center;
+    letter-spacing: 0.16px;
+    line-height: normal;
+  }
+  
+  .profile .rectangle-2 {
+    position: absolute;
+    width: 160px;
+    height: 146px;
+    top: 111px;
+    left: 56px;
+    object-fit: cover;
+  }
+  
+  .profile .text-wrapper-5 {
+    position: absolute;
+    width: 217px;
+    height: 24px;
+    top: 273px;
+    left: 28px;
+    font-family: "Instrument Sans-Medium", Helvetica;
+    font-weight: 500;
+    color: #000000;
+    font-size: 20px;
+    text-align: center;
+    letter-spacing: 0;
+    line-height: normal;
+  }
+  
+  .profile .text-wrapper-6 {
+    position: absolute;
+    width: 217px;
+    top: 314px;
+    left: 28px;
+    font-family: "Hanuman-Regular", Helvetica;
+    font-weight: 400;
+    color: #00000080;
+    font-size: 16px;
+    letter-spacing: 0.16px;
+    line-height: normal;
+  }
+  
+  .profile .frame-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    width: 219px;
+    align-items: flex-start;
+    gap: 0px 55px;
+    padding: 19px 11px;
+    position: absolute;
+    top: 470px;
+    left: 18px;
+    background-color: #d9d9d980;
+    border-radius: 27px;
+  }
+  
+  .profile .frame-8 {
+    display: flex;
+    flex-wrap: wrap;
+    width: 197px;
+    align-items: flex-start;
+    gap: 0px 55px;
+    position: relative;
+  }
+  
+  .profile .text-wrapper-7 {
+    position: relative;
+    width: fit-content;
+    margin-top: -1.00px;
+    font-family: "Hanuman-Regular", Helvetica;
+    font-weight: 400;
+    color: #000000;
+    font-size: 16px;
+    letter-spacing: 0.16px;
+    line-height: normal;
+  }
+  
+  .profile .mynaui-trash-solid {
+    position: relative;
+    width: 49px;
+    height: 49px;
+  }
+  
+  .profile .text-wrapper-8 {
+    width: 67px;
+    height: 15px;
+    font-family: "Hanuman-Bold", Helvetica;
+    font-weight: 700;
+    color: #000000;
+    font-size: 16px;
+    letter-spacing: 0.16px;
+    white-space: nowrap;
+    position: relative;
+    line-height: normal;
+  }
+  
+  .profile .frame-9 {
+    display: inline-flex;
+    align-items: flex-end;
+    position: absolute;
+    top: 12px;
+    left: 21px;
+  }
+  
+  .profile .rectangle-3 {
+    position: relative;
+    width: 97px;
+    height: 70px;
+    object-fit: cover;
+  }
+  
+  .profile .frame-10 {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 10px;
+    position: relative;
+    flex: 0 0 auto;
+  }
+  
+  .profile .text-wrapper-9 {
+    position: relative;
+    width: fit-content;
+    margin-top: -1.00px;
+    font-family: "Hanuman-Regular", Helvetica;
+    font-weight: 400;
+    color: #000000;
+    font-size: 36px;
+    text-align: center;
+    letter-spacing: 0;
+    line-height: normal;
+  }
+  
+  .profile .frame-11 {
+    display: inline-flex;
+    align-items: center;
+    gap: 80px;
+    position: absolute;
+    top: 22px;
+    left: 770px;
+  }
+  
+  .profile .text-wrapper-10 {
+    position: relative;
+    width: fit-content;
+    margin-top: -1.00px;
+    font-family: "Hanuman-Regular", Helvetica;
+    font-weight: 400;
+    color: #000000;
+    font-size: 20px;
+    text-align: center;
+    letter-spacing: 0;
+    line-height: normal;
+  }
+  
+  .profile .frame-12 {
+    display: inline-flex;
+    align-items: flex-start;
+    gap: 21px;
+    position: absolute;
+    top: 798px;
+    left: 1090px;
+  }
+  
+  .profile .hugeicons-logout {
+    position: relative;
+    width: 60px;
+    height: 60px;
+    background-color: #156e1a;
+    border-radius: 10px;
+    overflow: hidden;
+  }
+  
+  .profile .hugeicons-logout-wrapper {
+    position: relative;
+    width: 46px;
+    height: 51px;
+    top: 4px;
+    left: 7px;
+    background-image: url(./img/vector.svg);
+    background-size: 100% 100%;
+  }
+  
+  .profile .hugeicons-logout-2 {
+    position: absolute;
+    width: 41px;
+    height: 41px;
+    top: 1px;
+    left: 2px;
+  }
+  
+  .profile .text-wrapper-11 {
+    position: relative;
+    width: 143px;
+    height: 86px;
+    margin-top: -1.00px;
+    font-family: "Hanuman-Regular", Helvetica;
+    font-weight: 400;
+    color: #000000;
+    font-size: 40px;
+    letter-spacing: 0;
+    line-height: normal;
+  }
+  /* Inject original CSS here */
+  
+  /* New and modified styles */
+  body {
+    font-family: "Hanuman-Regular", Helvetica, Arial, sans-serif;
+    line-height: 1.6;
+    color: #000000;
+  }
+  
+  .profile-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    border-bottom: 1px solid #000000;
+  }
+  
+  .logo-container {
+    display: flex;
+    align-items: center;
+  }
+  
+  .logo {
+    width: 97px;
+    height: 70px;
+    object-fit: cover;
+  }
+  
+  .company-name {
+    font-size: 36px;
+    margin-left: 1rem;
+  }
+  
+  .main-navigation ul {
+    display: flex;
+    gap: 80px;
+    list-style: none;
+  }
+  
+  .main-navigation a {
+    font-size: 20px;
+    color: #000000;
+    text-decoration: none;
+  }
+  
+  .profile-content {
+    display: flex;
+    padding: 2rem;
+  }
+  
+  .user-info {
+    flex: 1;
+    padding-right: 2rem;
+  }
+  
+  .user-avatar {
+    width: 160px;
+    height: 146px;
+    object-fit: cover;
+    border-radius: 50%;
+  }
+  
+  .user-name {
+    font-family: "Instrument Sans-Medium", Helvetica, Arial, sans-serif;
+    font-size: 20px;
+    font-weight: 500;
+    margin-top: 1rem;
+  }
+  
+  .user-email {
+    color: #00000080;
+    font-size: 16px;
+  }
+  
+  .contact-details {
+    margin-top: 1rem;
+  }
+  
+  .contact-details p {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0.5rem;
+  }
+  
+  .icon {
+    width: 22px;
+    height: 22px;
+    margin-right: 0.5rem;
+  }
+  
+  .total-waste {
+    background-color: #d9d9d980;
+    border-radius: 27px;
+    padding: 1rem;
+    margin-top: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .waste-icon {
+    width: 49px;
+    height: 49px;
+  }
+  
+  .waste-amount {
+    font-family: "Hanuman-Bold", Helvetica, Arial, sans-serif;
+    font-weight: 700;
+    font-size: 16px;
+  }
+  
+  .recent-activity {
+    flex: 2;
+  }
+  
+  .recent-activity h2 {
+    font-size: 48px;
+    margin-bottom: 1rem;
+  }
+  
+  .activity-list {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .activity-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 2rem;
+  }
+  
+  .activity-icon {
+    width: 112px;
+    height: 112px;
+    margin-right: 2rem;
+  }
+  
+  .activity-details h3 {
+    font-size: 36px;
+    margin-bottom: 0.5rem;
+  }
+  
+  .activity-details p {
+    font-size: 20px;
+    color: #00000080;
+  }
+  
+  .profile-footer {
+    display: flex;
+    justify-content: flex-end;
+    padding: 1rem;
+  }
+  
+  .logout-button {
+    display: flex;
+    align-items: center;
+    background-color: #156e1a;
+    color: #ffffff;
+    border: none;
+    border-radius: 10px;
+    padding: 0.5rem 1rem;
+    font-size: 40px;
+    cursor: pointer;
+  }
+  
+  .logout-button img {
+    width: 41px;
+    height: 41px;
+    margin-right: 1rem;
+  }
+  
+  @media (max-width: 768px) {
+    .profile-content {
+      flex-direction: column;
+    }
+  
+    .user-info,
+    .recent-activity {
+      width: 100%;
+      padding-right: 0;
+    }
+  
+    .main-navigation ul {
+      gap: 20px;
+    }
+  
+    .activity-item {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  
+    .activity-icon {
+      margin-bottom: 1rem;
+    }
+  }
