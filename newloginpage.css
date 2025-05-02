@@ -1,0 +1,159 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family:
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    Oxygen,
+    Ubuntu,
+    Cantarell,
+    "Open Sans",
+    "Helvetica Neue",
+    sans-serif;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(220, 252, 231, 0.5);
+}
+
+.login-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 5rem 0;
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 1.5rem;
+  height: 885px;
+  width: 929px;
+}
+
+.logo {
+  margin-bottom: 1.25rem;
+  height: 6rem;
+  width: 119px;
+}
+
+.title {
+  margin-bottom: 0.375rem;
+  font-size: 2.25rem;
+  font-weight: 700;
+  color: black;
+}
+
+.subtitle {
+  margin-bottom: 2.5rem;
+  font-size: 1.25rem;
+  color: black;
+}
+
+.quote {
+  margin-bottom: 4rem;
+  font-size: 2.25rem;
+  text-align: center;
+  color: rgba(0, 0, 0, 0.9);
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  margin-bottom: 2.5rem;
+}
+
+.input-group {
+  position: relative;
+  display: flex;
+  align-items: center;
+  border-radius: 1rem;
+  border: 2px solid #22c55e;
+  background-color: #f5f5f5;
+  height: 54px;
+  width: 380px;
+}
+
+.input-field {
+  padding-left: 1rem;
+  font-size: 1.25rem;
+  border: none;
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  color: rgba(0, 0, 0, 0.3);
+}
+
+.input-field::placeholder {
+  color: rgba(0, 0, 0, 0.3);
+}
+
+.icon {
+  position: absolute;
+  right: 15px;
+  cursor: pointer;
+}
+
+.signup-prompt {
+  display: flex;
+  align-items: center;
+  margin-bottom: 2.5rem;
+  font-size: 1rem;
+  color: black;
+}
+
+.signup-link {
+  margin-left: 0.375rem;
+  font-weight: 800;
+  color: #22c55e;
+  cursor: pointer;
+}
+
+.login-button {
+  font-size: 1.875rem;
+  color: white;
+  background-color: #166534;
+  border-radius: 1rem;
+  border: none;
+  cursor: pointer;
+  height: 54px;
+  width: 380px;
+}
+
+@media (max-width: 991px) {
+  .login-card {
+    padding: 4rem 0;
+    width: 80%;
+  }
+
+  .input-group,
+  .login-button {
+    width: 100%;
+  }
+}
+
+@media (max-width: 640px) {
+  .login-card {
+    padding: 2.5rem 0;
+    width: 90%;
+  }
+
+  .quote {
+    font-size: 1.875rem;
+  }
+
+  .input-group,
+  .login-button {
+    width: 100%;
+  }
+}
