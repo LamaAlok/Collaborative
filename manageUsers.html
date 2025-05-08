@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Manage Users</title>
+  <link rel="stylesheet" href="manageUsers.css" />
+</head>
+<body>
+  <div class="container">
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <h2>Manage Users</h2>
+      <div class="profile">
+        <img src="profile.png" alt="User">
+      </div>
+      <nav>
+        <ul>
+          <li><span class="icon">🏠</span> Dashboard</li>
+          <li><span class="icon">🚛</span> Manage Pickups</li>
+          <li class="active"><span class="icon">👥</span> Manage Users</li>
+          <li><span class="icon">📊</span> Analytics & Report</li>
+          <li><span class="icon">🔓</span> Logout</li>
+        </ul>
+      </nav>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content">
+      <div class="search-bar">
+        <input type="text" placeholder="Search by name or email" />
+        <button class="search-btn">Search</button>
+      </div>
+
+      <table class="user-table">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Role</th>
+            <th>Status</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Aayush</td>
+            <td>abc1@gmail.com</td>
+            <td><span class="role-badge">Collector</span></td>
+            <td><span class="status active">Active</span></td>
+            <td><button class="edit-btn">Edit</button></td>
+          </tr>
+          <tr>
+            <td>Alok</td>
+            <td>wty@gmail.com</td>
+            <td><span class="role-badge">User</span></td>
+            <td><span class="status active">Active</span></td>
+            <td><button class="edit-btn">Edit</button></td>
+          </tr>
+          <tr>
+            <td>Pemba</td>
+            <td>lkj1@gmail.com</td>
+            <td><span class="role-badge">Admin</span></td>
+            <td><span class="status active">Active</span></td>
+            <td><button class="edit-btn">Edit</button></td>
+          </tr>
+          <tr>
+            <td>Natasha</td>
+            <td>grt@gmail.com</td>
+            <td><span class="role-badge">User</span></td>
+            <td><span class="status inactive">Inactive</span></td>
+            <td><button class="edit-btn">Edit</button></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</body>
+</html>
