@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Edit Users</title>
+  <link rel="stylesheet" href="editUsers.css" />
+</head>
+<body>
+  <div class="container">
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <h2>Edit Users</h2>
+      <div class="profile">
+        <img src="profile.png" alt="User">
+      </div>
+      <nav>
+        <ul>
+          <li><span class="icon">🏠</span> Dashboard</li>
+          <li><span class="icon">🚛</span> Manage Pickups</li>
+          <li class="active"><span class="icon">👥</span> Manage Users</li>
+          <li><span class="icon">📊</span> Analytics & Report</li>
+          <li><span class="icon">🔓</span> Logout</li>
+        </ul>
+      </nav>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content">
+      <form class="edit-form">
+        <label for="name">Name</label>
+        <input type="text" id="name" value="Aayush" />
+
+        <label for="email">Email</label>
+        <input type="email" id="email" value="abc1@gmail.com" />
+
+        <label for="role">Role</label>
+        <select id="role">
+          <option selected>Collector</option>
+          <option>Admin</option>
+          <option>Viewer</option>
+        </select>
+
+        <label>Status</label>
+        <div class="status-row">
+          <span>Active</span>
+          <label class="switch">
+            <input type="checkbox">
+            <span class="slider round"></span>
+          </label>
+        </div>
+
+        <div class="buttons">
+          <button type="submit" class="save-btn">Save Changes</button>
+          <button type="button" class="cancel-btn">Cancel</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</body>
+</html>
