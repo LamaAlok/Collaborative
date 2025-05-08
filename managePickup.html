@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Manage Pickups</title>
+  <link rel="stylesheet" href="managePickup.css" />
+</head>
+<body>
+  <div class="container">
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <h2>Manage Pickups</h2>
+
+      <div class="profile">
+        <img src="profile.png" alt="User">
+      </div>
+      <nav>
+        <ul>
+          <li><span class="icon">🏠</span> Dashboard</li>
+          <li class="active"><span class="icon">🚛</span> Manage Pickups</li>
+          <li><span class="icon">👥</span> Manage Users</li>
+          <li><span class="icon">📊</span> Analytics & Report</li>
+          <li><span class="icon">🔓</span> Logout</li>
+        </ul>
+      </nav>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content">
+      <div class="search-bar">
+        <input type="text" placeholder="Search............">
+        <button>Search</button>
+      </div>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Pickup ID</th>
+            <th>Location</th>
+            <th>Status</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>PICKUP-001</td>
+            <td>Maitidevi</td>
+            <td><span class="status pending">Pending</span></td>
+            <td>
+              <button class="approve">✅ Approve</button>
+              <button class="reject">Reject</button>
+            </td>
+          </tr>
+          <tr>
+            <td>PICKUP-002</td>
+            <td>Baneshwor</td>
+            <td><span class="status pending">Pending</span></td>
+            <td>
+              <button class="approve">✅ Approve</button>
+              <button class="reject">Reject</button>
+            </td>
+          </tr>
+          <tr>
+            <td>PICKUP-003</td>
+            <td>Anamnagar</td>
+            <td><span class="status pending">Pending</span></td>
+            <td>
+              <button class="approve">✅ Approve</button>
+              <button class="reject">Reject</button>
+            </td>
+          </tr>
+          <tr>
+            <td>PICKUP-004</td>
+            <td>Jhamsikhel</td>
+            <td><span class="status approved">Approved</span></td>
+            <td>
+              <button class="approve">✅ Approve</button>
+              <button class="reject">Reject</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</body>
+</html>
