@@ -1,11 +1,11 @@
 <?php
 require 'db.php';
 
-// Check if the form is submitted using POST
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Get form data
-    $name = trim($_POST['fullname']); // Adjusted to use 'name' instead of 'fullname'
+    $name = trim($_POST['fullname']);
     $email = trim($_POST['email']);
+    $phone = trim($_POST['phone']); // ✅ phone field added
     $password = trim($_POST['password']);
     $confirm_password = trim($_POST['confirm_password']);
     $user_type = trim($_POST['user_type']);
@@ -16,28 +16,27 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         exit;
     }
 
-    // Hash the password for security
+    // Hash password
     $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
 
-    // Insert data into the users table using 'name' instead of 'fullname'
-    $sql = "INSERT INTO users (name, email, password, user_type) VALUES (?, ?, ?, ?)";
+    // ✅ Insert into users table with phone included
+    $sql = "INSERT INTO users (name, email, phone, password, user_type) VALUES (?, ?, ?, ?, ?)";
     $stmt = $conn->prepare($sql);
 
-    if ($stmt === false) {
+    if (!$stmt) {
         echo "Error: Unable to prepare statement.";
         exit;
     }
 
-    $stmt->bind_param("ssss", $name, $email, $hashedPassword, $user_type);
+    $stmt->bind_param("sssss", $name, $email, $phone, $hashedPassword, $user_type);
 
     if ($stmt->execute()) {
         echo "Registration successful! Redirecting to login...";
-        header("refresh:2;url=login.html"); // Redirect to login after 2 seconds
+        header("refresh:2;url=login.html");
     } else {
         echo "Error: " . $stmt->error;
     }
 
-    // Close the statement and connection
     $stmt->close();
     $conn->close();
 } else {

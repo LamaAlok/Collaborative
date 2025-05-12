@@ -19,7 +19,7 @@
       </div>
       <nav class="main-nav">
         <ul class="nav-list">
-          <li><a href="dashboard.html">Home</a></li>
+          <li><a href="dashboardB.php">Home</a></li>
           <li><a href="profile.php">Profile</a></li>
           <li><a href="service.php">Service</a></li>
           <li><a href="contact.php">Contact</a></li>

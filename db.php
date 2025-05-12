@@ -2,7 +2,7 @@
 $host = 'localhost';
 $db = 'waste_management';
 $user = 'root';
-$pass = ''; // ← add your password if you set one
+$pass = ''; 
 
 $conn = new mysqli($host, $user, $pass, $db);
 

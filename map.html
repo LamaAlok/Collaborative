@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kathmandu Map with Draggable Pin, Location Save & Stylish UI</title>
+  
+  <!-- Leaflet CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+  
+  <!-- Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+  
+  <style>
+    /* Global styles */
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #f4f7fa;
+      margin: 0;
+      padding: 0;
+      color: #333;
+    }
+
+    h3 {
+      text-align: center;
+      color: #2c3e50;
+      padding: 20px;
+      background-color: #ecf0f1;
+      margin: 0;
+    }
+
+    /* Map container */
+    #map {
+      height: 600px;
+      width: 100%;
+    }
+
+    /* Controls (Buttons) */
+    #controls {
+      text-align: center;
+      padding: 15px;
+      background-color: #ffffff;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      margin-bottom: 10px;
+    }
+
+    #controls button {
+      background-color: #3498db;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      margin: 10px;
+      border-radius: 5px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    #controls button:hover {
+      background-color: #2980b9;
+    }
+
+    #controls button:active {
+      transform: scale(0.98);
+    }
+
+    /* Info box */
+    #info {
+      text-align: center;
+      padding: 15px;
+      background-color: #ffffff;
+      margin-top: 10px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    #info span {
+      font-weight: bold;
+      color: #3498db;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      #map {
+        height: 400px;
+      }
+
+      #controls {
+        padding: 10px;
+      }
+
+      #controls button {
+        padding: 8px 15px;
+        font-size: 14px;
+      }
+
+      #info {
+        font-size: 14px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <h3>Kathmandu Map with Search, Draggable Pin & Save Location</h3>
+
+  <div id="controls">
+    <!-- Pin Location Button (using FontAwesome icon) -->
+    <button onclick="pinMyLocation()">
+      <i class="fas fa-map-marker-alt"></i> Pin My Location
+    </button>
+    <!-- Save Location Button -->
+    <button onclick="saveLocationToServer()">
+      <i class="fas fa-save"></i> Save Location
+    </button>
+  </div>
+
+  <div id="map"></div>
+
+  <div id="info">
+    <p>Coordinates: <span id="coords">-</span></p>
+    <p>Address: <span id="address">-</span></p>
+  </div>
+
+  <!-- Leaflet JS -->
+  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+  <!-- Geocoder Plugin -->
+  <script src="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.js"></script>
+
+  <script>
+    // Initialize the map
+    const map = L.map('map').setView([27.7172, 85.3240], 13);
+
+    // Add OpenStreetMap tiles
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      attribution: '&copy; OpenStreetMap contributors'
+    }).addTo(map);
+
+    // Add search control
+    L.Control.geocoder().addTo(map);
+
+    let marker;
+
+    // Function to add or move draggable marker
+    function setDraggableMarker(lat, lng) {
+      if (marker) {
+        marker.setLatLng([lat, lng]);
+      } else {
+        marker = L.marker([lat, lng], { draggable: true }).addTo(map);
+        marker.on('dragend', function (e) {
+          const pos = marker.getLatLng();
+          updateInfo(pos.lat, pos.lng);
+        });
+      }
+      updateInfo(lat, lng);
+    }
+
+    // Get user location and place marker
+    function pinMyLocation() {
+      if (!navigator.geolocation) {
+        alert('Geolocation not supported');
+        return;
+      }
+
+      navigator.geolocation.getCurrentPosition(
+        (position) => {
+          const lat = position.coords.latitude;
+          const lng = position.coords.longitude;
+          map.setView([lat, lng], 14);
+          setDraggableMarker(lat, lng);
+        },
+        () => alert('Could not get your location')
+      );
+    }
+
+    // Update coordinate and address info
+    function updateInfo(lat, lng) {
+      document.getElementById('coords').textContent = `${lat.toFixed(5)}, ${lng.toFixed(5)}`;
+
+      // Get address using OpenStreetMap reverse geocoding
+      fetch(`https://nominatim.openstreetmap.org/reverse?format=json&lat=${lat}&lon=${lng}`)
+        .then(res => res.json())
+        .then(data => {
+          const address = data.display_name || 'Address not found';
+          document.getElementById('address').textContent = address;
+        })
+        .catch(() => {
+          document.getElementById('address').textContent = 'Error fetching address';
+        });
+    }
+
+    // Save location to server
+    function saveLocationToServer() {
+      if (marker) {
+        const latLng = marker.getLatLng();
+        const locationData = {
+          lat: latLng.lat,
+          lng: latLng.lng
+        };
+
+        fetch('http://localhost/location-app/save-location.php', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(locationData)
+        })
+        .then(response => response.json())
+        .then(data => {
+          console.log('Location saved:', data);
+          alert('Location saved to the server!');
+        })
+        .catch(error => {
+          console.error('Error saving location:', error);
+          alert('Error saving location.');
+        });
+      } else {
+        alert('No marker to save!');
+      }
+    }
+  </script>
+
+</body>
+</html>

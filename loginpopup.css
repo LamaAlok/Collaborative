@@ -1,0 +1,93 @@
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f0f0f0;
+}
+
+/* Ensure popup is hidden initially and covers the screen */
+.popup-container {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4); /* backdrop */
+}
+
+/* Centered content box */
+.popup-content {
+  width: 400px;
+  margin: 10% auto;
+  background-color: #fff;
+  border: 2px solid #2e7d32;
+  border-radius: 8px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.3);
+  padding: 30px 20px;
+  text-align: center;
+  position: relative;
+}
+
+/* Top green bar with close button */
+.popup-header {
+  background-color: #2e7d32;
+  padding: 10px;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+  text-align: right;
+}
+
+.close-btn {
+  font-size: 20px;
+  color: white;
+  cursor: pointer;
+}
+
+.bin-icon {
+  width: 60px;
+  height: auto;
+  margin-bottom: 10px;
+}
+
+h2 {
+  margin: 10px 0 5px;
+  font-size: 22px;
+  font-weight: bold;
+  color: #000;
+}
+
+.subtitle {
+  margin-top: 0;
+  font-size: 14px;
+  color: #555;
+}
+
+.message {
+  margin: 20px 0;
+  font-size: 16px;
+  font-weight: 500;
+  color: #222;
+}
+
+.login-btn {
+  background-color: #2e7d32;
+  color: white;
+  border: none;
+  padding: 10px 25px;
+  font-size: 16px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  border-radius: 4px;
+  text-decoration: none;
+}
+
+.login-btn:hover {
+  background-color: #256428;
+}
+
+.login-icon {
+  font-size: 18px;
+}

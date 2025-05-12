@@ -25,7 +25,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         $stmt->bind_param("sssssdss", $fullName, $phone, $cardName, $cardNumber, $method, $amount, $now, $validUntil);
 
         if ($stmt->execute()) {
-            echo "<script>alert('Payment successful! Now you can request a pickup.'); window.location.href='request.php';</script>";
+            echo "<script>alert('Payment successful! Now you can request a pickup.'); window.location.href='py.html';</script>";
         } else {
             echo "Payment failed. Try again.";
         }

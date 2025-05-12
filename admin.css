@@ -60,15 +60,31 @@ body {
   font-size: 18px;
   font-family: 'Instrument Sans', sans-serif;
   cursor: pointer;
-  padding: 10px;
   border-left: 4px solid transparent;
   transition: all 0.2s;
 }
 
-.sidebar-menu li:hover,
-.sidebar-menu li.active {
-  font-weight: 700;
+/* Normal state (before hover) */
+.sidebar-menu li a {
+  text-decoration: none;
+  color: #333;
+  display: block;
+  padding: 10px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Hover state (after hover) */
+.sidebar-menu li a:hover {
   background-color: #f0f0f0;
+  color: #000;
+  font-weight: bold;
+  border-left: 4px solid #4ab857;
+}
+
+/* Active page link */
+.sidebar-menu li a.active {
+  background-color: #f0f0f0;
+  font-weight: 700;
   border-left: 4px solid #4ab857;
 }
 

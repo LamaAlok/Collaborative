@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Khalti Payment Integration</title>
+    <script src="https://khalti.com/static/khalti-checkout.js"></script>
+</head>
+<body>
+    <h2>Buy a Product – Rs. 100</h2>
+    <button id="pay-button">Pay with Khalti</button>
+
+    <script>
+        var config = {
+            // 🔑 Replace this with your actual public key from Khalti
+            publicKey: "a9160d38b38947e48856b6d4dbb56084",
+            productIdentity: "1234567890",
+            productName: "Sample Product",
+            productUrl: "http://localhost/product", // Replace with your product's URL
+            paymentPreference: ["KHALTI"],
+
+            eventHandler: {
+                onSuccess(payload) {
+                    console.log("✅ Payment success:", payload);
+
+                    // Send token and amount to backend for verification
+                    fetch("verify-payment.php", {
+                        method: "POST",
+                        headers: { "Content-Type": "application/json" },
+                        body: JSON.stringify({
+                            token: payload.token,
+                            amount: payload.amount
+                        })
+                    })
+                    .then(res => res.json())
+                    .then(data => {
+                        console.log("✅ Server verification:", data);
+                        if (data.idx) {
+                            alert("✅ Payment verified successfully!");
+                        } else {
+                            alert("❌ Payment verification failed!");
+                        }
+                    })
+                    .catch(err => {
+                        console.error("Server error:", err);
+                        alert("❌ Error verifying payment.");
+                    });
+                },
+                onError(error) {
+                    console.log("❌ Payment error:", error);
+                },
+                onClose() {
+                    console.log("ℹ️ Payment popup closed.");
+                }
+            }
+        };
+
+        var checkout = new KhaltiCheckout(config);
+        document.getElementById("pay-button").onclick = function () {
+            // Amount in paisa (100 x 100 = 10000 paisa = Rs. 100)
+            checkout.show({ amount: 10000 });
+        };
+    </script>
+</body>
+</html>

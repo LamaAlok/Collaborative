@@ -22,13 +22,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['email']) && isset($_PO
 
             // Redirect based on role
             if ($user_type === 'admin') {
-                header("Location: admin.html");
+                header("Location: admin.php");
                 exit;
             } elseif ($user_type === 'collector') {
                 header("Location: pickup-action.php");  // Your collector dashboard
                 exit;
             } else {
-                header("Location: dashboard.html"); // For general users
+                header("Location: dashboardB.php"); // ✅ Updated for general users
                 exit;
             }
         } else {

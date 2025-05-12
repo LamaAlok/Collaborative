@@ -7,6 +7,8 @@
   <link href="https://fonts.googleapis.com/css2?family=Hanuman:wght@300;400;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="dashboard.css" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@2.30.0/tabler-icons.min.css" />
+  <link rel="stylesheet" href="loginpopup.css" />
+
 </head>
 
 <body>
@@ -29,7 +31,7 @@
 
       <nav class="main-nav">
         <a href="dashboard.html" class="nav-link">Home</a>
-        <a href="profile.php" class="nav-link">Profile</a>
+        <a href="profile.html" class="nav-link">Profile</a>
         <a href="service.php" class="nav-link">Service</a>
         <a href="help.html" class="nav-link">Contact</a>
       </nav>
@@ -84,10 +86,7 @@
           <h3 class="feature-title">Waste Categories</h3>
         </article>
       </a>
-      
-      
-    
-      <a href="payments.html" style="text-decoration: none; color: inherit;">
+        <a href="payments.html" style="text-decoration: none; color: inherit;">
         <article class="feature-card">
           <div class="feature-icon">
             <i class="ti ti-credit-card"></i>
@@ -109,6 +108,52 @@
       <footer class="bottom-bar">
       <p class="copyright-text">© BIN-BUDDY. All rights reserved.</p>
       </footer>
-          
+      <div id="popup-container-placeholder"></div>
+
+      <script>
+        fetch("loginpopup..html")
+          .then(res => res.text())
+          .then(html => {
+            document.getElementById("popup-container-placeholder").innerHTML = html;
+            setupLoginPopup(); // Call setup after loading
+          });
+      
+          function setupLoginPopup() {
+  const popup = document.getElementById("login-popup");
+  const closeBtn = document.querySelector(".popup-close-btn");
+
+  if (!popup || !closeBtn) return; // exit if elements are missing
+
+  function isUserLoggedIn() {
+    return false;
+  }
+
+  function showPopup(event) {
+    if (!isUserLoggedIn()) {
+      event.preventDefault();
+      popup.style.display = "block";
+    }
+  }
+
+  function closePopup() {
+    popup.style.display = "none";
+  }
+
+  document.querySelectorAll('a[href="request.php"], a[href="profile.html"]').forEach(el => {
+  el.addEventListener("click", function(e) {
+    e.preventDefault(); // block default link
+    document.getElementById("login-popup").style.display = "block"; // show modal
+  });
+});
+
+
+  closeBtn.addEventListener("click", closePopup);
+  window.addEventListener("click", (e) => {
+    if (e.target === popup) closePopup();
+  });
+}
+
+      </script>
+             
 </body>
 </html>

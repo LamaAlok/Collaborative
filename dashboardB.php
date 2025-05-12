@@ -1,0 +1,120 @@
+<?php
+session_start();
+
+// ✅ Correct session check — login.php sets 'user_id'
+if (!isset($_SESSION['user_id'])) {
+    header("Location: login.html");
+    exit();
+}
+?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BIN-BUDDY</title>
+  <link href="https://fonts.googleapis.com/css2?family=Hanuman:wght@300;400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="dashboard.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@2.30.0/tabler-icons.min.css" />
+</head>
+
+<body>
+  
+  <div class="top-bar"></div>
+
+  <main class="container">
+    <!-- Header with Branding & Navigation -->
+    <header class="main-header">
+      <div class="brand">
+        <img
+          src="https://cdn.builder.io/api/v1/image/assets/TEMP/e15e45fbe9676286bbd308dfb68f57c5d5c32b5f?placeholderIfAbsent=true"
+          alt="BIN-BUDDY Logo"
+          class="logo"
+        />
+        <div class="brand-text">
+          <h1 class="brand-name">BIN-BUDDY</h1>
+        </div>
+      </div>
+
+      <nav class="main-nav">
+        <a href="dashboardB.php" class="nav-link">Home</a>
+        <a href="profile.php" class="nav-link">Profile</a>
+        <a href="service.php" class="nav-link">Service</a>
+        <a href="help.html" class="nav-link">Contact</a>
+      </nav>
+
+      <button class="mobile-menu-toggle">
+        <i class="ti ti-menu-2"></i>
+      </button>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+      <div class="hero-content">
+        <h2 class="hero-title">Efficient Waste Management For a Greener Future</h2>
+        <p class="hero-description">
+          We provide waste collection services to ensure proper disposal and recycling of waste materials. 
+          Join us in making a positive impact on the environment.
+        </p>
+        <a href="request.php" class="btn-request">Request Pickup</a>
+
+      </div>
+
+      <div class="hero-images">
+        <img
+          src="https://cdn.builder.io/api/v1/image/assets/TEMP/19f84aa42a01c354c0810854537e8264462d872e?placeholderIfAbsent=true"
+          alt="Waste management illustration"
+          class="hero-image-main"
+        />
+        <img
+          src="https://cdn.builder.io/api/v1/image/assets/TEMP/0216d3a25fb78f1cd5e121516e84cd3689b99f70?placeholderIfAbsent=true"
+          alt="Recycling illustration"
+          class="hero-image-secondary"
+        />
+      </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features-section">
+      <a href="request.php" style="text-decoration: none; color: inherit;">
+        <article class="feature-card">
+          <div class="feature-icon">
+            <i class="ti ti-truck"></i>
+          </div>
+          <h3 class="feature-title">Request Pickup</h3>
+        </article>
+      </a>
+    
+      <a href="waste_categories.html" style="text-decoration: none; color: inherit;">
+        <article class="feature-card">
+          <div class="feature-icon">
+            <i class="ti ti-trash"></i>
+          </div>
+          <h3 class="feature-title">Waste Categories</h3>
+        </article>
+      </a>
+        <a href="payments.html" style="text-decoration: none; color: inherit;">
+        <article class="feature-card">
+          <div class="feature-icon">
+            <i class="ti ti-credit-card"></i>
+          </div>
+          <h3 class="feature-title">Payment Method</h3>
+        </article>
+      </a>
+    
+      <a href="help.html" style="text-decoration: none; color: inherit;">
+        <article class="feature-card">
+          <div class="feature-icon">
+            <i class="ti ti-help-circle"></i>
+          </div>
+          <h3 class="feature-title">Guidelines &amp; Help</h3>
+        </article>
+      </a>
+    </section>
+    
+      <footer class="bottom-bar">
+      <p class="copyright-text">© BIN-BUDDY. All rights reserved.</p>
+      </footer>
+          
+</body>
+</html>

@@ -137,6 +137,52 @@ body {
 .confirm-button:hover {
   background-color: #0f5015;
 }
+.payment-section {
+  padding: 40px;
+  text-align: center;
+}
+
+.payment-card {
+  background-color: #fff;
+  padding: 20px;
+  margin: 20px 0;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  text-align: left;
+  display: inline-block;
+  width: 100%;
+}
+
+.payment-button {
+  background-color: #4ab857;
+  color: white;
+  padding: 12px 24px;
+  font-size: 18px;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s ease-in-out;
+  display: block;
+  margin-top: 20px;
+  width: 100%; /* Make it span the full width */
+  text-align: center; /* Center text inside the button */
+}
+
+.payment-button:hover {
+  background-color: #368d43;
+  transform: scale(1.05);
+}
+
+.payment-button:active {
+  transform: scale(0.98);
+}
+
+
+/* Remove the select payment method text and container */
+.select-payment-method {
+  display: none;
+}
 
 /* Responsive */
 @media (max-width: 768px) {

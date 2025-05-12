@@ -1,13 +1,17 @@
 <?php
 session_start();
 require 'db.php';
-include 'nav.php'; 
 
-// Check if it's an AJAX POST request to update pickup status
+// Check if the user is logged in and is a collector
+if (!isset($_SESSION['user_id']) || $_SESSION['user_type'] !== 'collector') {
+    header("Location: login.html");
+    exit();
+}
+
+// Handle pickup status update via AJAX
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['pickup_id'], $_POST['status'])) {
     $pickup_id = $_POST['pickup_id'];
     $status = $_POST['status'];
-    file_put_contents("debug.log", json_encode($_POST) . PHP_EOL, FILE_APPEND);
 
     if (empty($pickup_id) || empty($status)) {
         echo "Missing pickup_id or status.";
@@ -29,11 +33,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['pickup_id'], $_POST['
     exit;
 }
 
-// Proceed with loading the HTML interface
+// Fetch pickup requests
 $sql = "SELECT * FROM pickups ORDER BY id DESC";
 $result = $conn->query($sql);
-?>
 
+// Check current collector status (from session or DB if implemented)
+$collectorStatus = isset($_SESSION['collector_status']) ? $_SESSION['collector_status'] : 'off';
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -48,20 +54,30 @@ $result = $conn->query($sql);
   <nav class="sidebar">
     <h1 class="sidebar-title">Manage Pickups</h1>
     <ul class="sidebar-menu">
-      <li class="menu-item active">Dashboard</li>
       <li class="menu-item selected">Manage Pickups</li>
-      <li class="menu-item">Manage User</li>
-      <li class="menu-item">Analytics &amp; Report</li>
-      <li class="menu-item">Settings</li>
     </ul>
   </nav>
 
   <main class="main-content">
-    <div class="search-container">
+    <!-- Toggle Collector Mode -->
+    <div style="margin-bottom: 20px;">
+      <label>
+        <input type="checkbox" id="collectorToggle" <?= $collectorStatus === 'on' ? 'checked' : '' ?> />
+        <strong>Collector Receiving Requests</strong>
+      </label>
+    </div>
+
+    <!-- Off Message -->
+    <div id="offMessage" style="display: <?= $collectorStatus === 'on' ? 'none' : 'block' ?>;">
+      <h2 style="color: gray;">Please Turn on Receiving requests</h2>
+    </div>
+
+    <!-- Search + Pickup Table -->
+    <div class="search-container" style="display: <?= $collectorStatus === 'on' ? 'flex' : 'none' ?>;">
       <input type="text" placeholder="Search......." class="search-input" />
     </div>
 
-    <section class="pickups-table-container">
+    <section class="pickups-table-container" id="pickupTable" style="display: <?= $collectorStatus === 'on' ? 'block' : 'none' ?>;">
       <header class="table-header">
         <div class="header-row">
           <h3 class="header-cell">Pickup ID</h3>
@@ -92,61 +108,55 @@ $result = $conn->query($sql);
 
 <script>
   function updateStatus(button, newStatus) {
-  const row = button.closest('.table-row');
-  const pickupId = row.querySelector('.pickup-id').innerText.trim();
-  const statusCell = row.querySelector('.status');
+    const row = button.closest('.table-row');
+    const pickupId = row.querySelector('.pickup-id').innerText.trim();
+    const statusCell = row.querySelector('.status');
 
-  fetch('pickup-action.php', {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-    body: `pickup_id=${pickupId}&status=${newStatus}`
-  })
-  .then(res => res.text())
-  .then(response => {
-    console.log(response);
-    if (response.includes("successfully")) {
-      // Update status text and color
-      statusCell.innerText = newStatus;
-      statusCell.className = `table-cell status ${newStatus.toLowerCase()}`;
+    fetch('pickup-action.php', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: `pickup_id=${pickupId}&status=${newStatus}`
+    })
+    .then(res => res.text())
+    .then(response => {
+      if (response.includes("successfully")) {
+        statusCell.innerText = newStatus;
+        statusCell.className = `table-cell status ${newStatus.toLowerCase()}`;
+        row.querySelectorAll('button').forEach(btn => btn.disabled = true);
+        setTimeout(() => {
+          row.style.opacity = 0;
+          setTimeout(() => row.remove(), 200);
+        }, 2000);
+      } else {
+        alert("Error: " + response);
+      }
+    })
+    .catch(err => alert("Failed to update status."));
+  }
 
-      // Optionally disable buttons
-      const buttons = row.querySelectorAll('button');
-      buttons.forEach(btn => btn.disabled = true);
-
-      // Remove row after 5 seconds
-      setTimeout(() => {
-        row.style.transition = 'opacity 0.2s';
-        row.style.opacity = 0;
-        setTimeout(() => row.remove(), 200);
-      }, 2000);
-    } else {
-      alert("Error: " + response);
-    }
-  })
-  .catch(err => {
-    console.error(err);
-    alert("Failed to update status.");
-  });
-}
-
-</script>
-<script>
   document.querySelector('.search-input').addEventListener('input', function () {
     const query = this.value.toLowerCase();
     const rows = document.querySelectorAll('.table-row');
-
     rows.forEach(row => {
       const pickupId = row.querySelector('.pickup-id').innerText.toLowerCase();
       const location = row.querySelector('.location').innerText.toLowerCase();
+      row.style.display = pickupId.includes(query) || location.includes(query) ? '' : 'none';
+    });
+  });
 
-      if (pickupId.includes(query) || location.includes(query)) {
-        row.style.display = '';
-      } else {
-        row.style.display = 'none';
-      }
+  // Collector toggle logic
+  document.getElementById('collectorToggle').addEventListener('change', function () {
+    const status = this.checked ? 'on' : 'off';
+    fetch('toggle_collector_status.php', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: 'status=' + status
+    }).then(() => {
+      document.getElementById('offMessage').style.display = status === 'on' ? 'none' : 'block';
+      document.querySelector('.search-container').style.display = status === 'on' ? 'flex' : 'none';
+      document.getElementById('pickupTable').style.display = status === 'on' ? 'block' : 'none';
     });
   });
 </script>
-
 </body>
 </html>
